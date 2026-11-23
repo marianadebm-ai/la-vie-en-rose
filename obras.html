@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Obras · Mariana de Bem</title>
+<meta name="description" content="Coleção La Vie en Rosé: 30 telas de 10 × 10 cm em acrílica, inspiradas na Praia do Rosa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Ballet:opsz@16..72&family=Archivo:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<header class="topo solido" id="topo">
+  <div class="wrap">
+    <a class="marca" href="index.html">Mariana <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 0l1.6 7.2L19 5.5l-6 4.5 6 4.5-7.4-1.7L10 20l-1.6-7.2L1 14.5 7 10 1 5.5l7.4 1.7z"/></svg> de Bem</a>
+    <nav class="menu caps" aria-label="Páginas">
+      <a href="obras.html" aria-current="page">Obras</a>
+      <a href="tatuagem.html">Tatuagem</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="cab-pagina">
+    <div class="wrap">
+      <span class="caps">Coleção · La Vie en Rosé</span>
+      <h1>As <span class="script">obras</span></h1>
+      <p>Uma nova tela a cada dia, de 24 de novembro a 23 de dezembro. Cada uma é única e tem um número.</p>
+    </div>
+  </section>
+
+  <section class="colecao">
+    <div class="wrap">
+      <div class="abas" role="tablist" aria-label="Capítulos da coleção" id="abas"></div>
+      <div class="ficha" id="info"></div>
+      <div class="contagem" id="contagem"></div>
+      <div class="grade" id="grade" role="tabpanel"></div>
+    </div>
+  </section>
+
+  <section class="comprar" id="comprar">
+    <div class="wrap duas">
+      <h2 class="titulo-sec">Como <span class="script">comprar</span></h2>
+      <div>
+        <ol class="passos">
+          <li><span><b>Escolha uma obra disponível, ou três.</b> Cada tela é única, tem um número e custa R$ 290. Um trio à sua escolha sai por R$ 700. Telas marcadas como "em breve" ainda estão sendo pintadas.</span></li>
+          <li><span><b>Chame no WhatsApp pelo botão da obra.</b> A mensagem já vai com o número e o nome da tela. É só completar com o seu CEP.</span></li>
+          <li><span><b>Frete à parte, calculado pelo seu CEP.</b> Pagamento e reserva são combinados direto comigo. Quando o pagamento é confirmado, a tela aparece como vendida aqui.</span></li>
+          <li><span><b>Envio depois de 23 de dezembro.</b> As obras são enviadas juntas, quando a série estiver completa. Se for presente de Natal, a obra chega depois do dia 25.</span></li>
+        </ol>
+        <p class="nota">A tela que você queria já foi vendida? <a data-whats="espera" href="#">Entre na lista de espera das próximas obras</a>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="frase">A arte é a minha forma de enxergar o mundo.</p>
+    <div class="links">
+      <a data-whats="ola" href="#">WhatsApp <span data-numero></span></a>
+      <button class="copiar" data-copiar type="button">copiar número</button>
+      <a href="https://www.instagram.com/marianadebems/" target="_blank" rel="noopener">Instagram @marianadebems</a>
+      <a href="https://www.tiktok.com/@marianadbem" target="_blank" rel="noopener">TikTok @marianadbem</a>
+    </div>
+    <div class="base caps"><span>Mariana de Bem · Praia do Rosa, Brasil</span><span>© 2026</span></div>
+  </div>
+</footer>
+
+<script src="comum.js"></script>
+<script>
+/* ================================================================
+   EDITE AQUI: as telas da coleção.
+   Em cada obra:
+     titulo: o elemento pintado
+     status: "embreve" | "disponivel" | "reservada" | "vendida"
+     foto:   endereço da foto da tela (ou deixe "")
+   ================================================================ */
+const CAPITULOS = [
+  {
+    id: "lembrancas",
+    aba: "Lembranças",
+    nome: "Lembranças do Rosa",
+    texto: "30 elementos que me lembram a Praia do Rosa, um por dia, de 24 de novembro a 23 de dezembro.",
+    medida: "10 × 10 cm",
+    preco: 290,
+    trio: 700, // 3 telas à escolha
+    inicio: "2026-11-24", // primeira tela; as datas seguintes contam um dia por tela
+    obras: {
+      // 1: { titulo: "Exemplo", status: "disponivel", foto: "" },
+    }
+  }
+];
+/* ================================================================ */
+
+const TOTAL = 30;
+const NOMES_STATUS = { embreve: "em breve", disponivel: "disponível", reservada: "reservada", vendida: "vendida" };
+const brl = v => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL", minimumFractionDigits: 0 });
+let atual = 0, soDisponiveis = false;
+try { atual = Math.min(Number(localStorage.getItem("lver-aba")) || 0, CAPITULOS.length - 1); } catch (e) {}
+
+function dataDaTela(cap, n) {
+  if (!cap.inicio) return null;
+  const d = new Date(cap.inicio + "T12:00:00");
+  d.setDate(d.getDate() + n - 1);
+  return d.toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit" });
+}
+
+// Pintura provisória: cada número ganha uma composição própria em tons de terra e mar.
+const PALETAS = [["#c9a27e","#efe4d6","#3f6f6c"],["#9cb8b2","#f1e7da","#9a5f43"],["#d8b48c","#b9805f","#4b7f86"],["#dfe2d8","#a8775a","#2f5c5f"],["#ecdcc8","#7fa39c","#b98a62"]];
+function pinturaProvisoria(capIdx, n) {
+  const p = PALETAS[(n * 7 + capIdx * 3) % PALETAS.length];
+  const h = 28 + (n * 37) % 44, x = 15 + (n * 53) % 70, y = 20 + (n * 29) % 55;
+  return `background:
+    radial-gradient(circle at ${x}% ${y}%, ${p[2]} 0 ${6 + n % 7}%, transparent ${7 + n % 7}%),
+    linear-gradient(180deg, ${p[1]} 0 ${h}%, ${p[0]} ${h}% 100%),
+    ${p[1]}`;
+}
+
+const linkWhats = (cap, n, titulo) => zap(`Olá, Mariana! Quero a tela ${String(n).padStart(2, "0")}/30${titulo ? ` "${titulo}"` : ""} da coleção La Vie en Rosé (${cap.medida}, ${brl(cap.preco)}). Ainda está disponível?\nMeu CEP para o frete: `);
+const linkTrio = cap => zap(`Olá, Mariana! Quero montar um trio da coleção La Vie en Rosé (3 telas por ${brl(cap.trio)}).\nAs telas que eu quero (números): \nMeu CEP para o frete: `);
+
+function desenhaAbas() {
+  const el = document.getElementById("abas");
+  el.innerHTML = "";
+  el.hidden = CAPITULOS.length < 2;
+  CAPITULOS.forEach((c, i) => {
+    const b = document.createElement("button");
+    b.className = "aba caps"; b.type = "button"; b.id = "aba-" + c.id;
+    b.setAttribute("role", "tab"); b.setAttribute("aria-selected", i === atual);
+    b.textContent = c.aba;
+    b.onclick = () => { atual = i; try { localStorage.setItem("lver-aba", i); } catch (e) {} desenha(); };
+    el.appendChild(b);
+  });
+}
+
+function desenha() {
+  desenhaAbas();
+  const cap = CAPITULOS[atual];
+  document.getElementById("info").innerHTML = `
+    <div><h3>${cap.nome}</h3><p>${cap.texto}</p></div>
+    <div class="preco caps"><b>${brl(cap.preco)}</b>${cap.medida} · acrílica${cap.trio ? ` · <a href="${linkTrio(cap)}" target="_blank" rel="noopener">trio ${brl(cap.trio)}</a>` : ""} · + frete</div>`;
+
+  const lista = Array.from({ length: TOTAL }, (_, i) => {
+    const n = i + 1, o = cap.obras[n] || {};
+    return { n, titulo: o.titulo || "", status: o.status || "embreve", foto: o.foto || "" };
+  });
+  const conta = s => lista.filter(o => o.status === s).length;
+  document.getElementById("contagem").innerHTML = `
+    <span><b>${conta("disponivel")}</b> disponíveis</span>
+    <span><b>${conta("vendida") + conta("reservada")}</b> vendidas ou reservadas</span>
+    <span><b>${conta("embreve")}</b> por vir</span>
+    <label for="filtro"><input type="checkbox" id="filtro" ${soDisponiveis ? "checked" : ""}> mostrar só disponíveis</label>`;
+  document.getElementById("filtro").onchange = e => { soDisponiveis = e.target.checked; desenha(); };
+
+  const grade = document.getElementById("grade");
+  const visiveis = soDisponiveis ? lista.filter(o => o.status === "disponivel") : lista;
+  if (!visiveis.length) { grade.innerHTML = `<p class="vazio-filtro">Nenhuma tela disponível neste momento. As próximas aparecem aqui assim que ficarem prontas.</p>`; return; }
+  grade.innerHTML = visiveis.map(o => {
+    const num = String(o.n).padStart(2, "0");
+    const data = dataDaTela(cap, o.n);
+    const titulo = o.titulo || (o.status === "embreve" ? (data ? `Tela do dia ${data}` : "Em breve") : `Tela ${num}`);
+    const imagem = o.foto ? `<img src="${o.foto}" alt="${titulo}, ${cap.medida}" loading="lazy">` : `<div class="pintura" style="${pinturaProvisoria(atual, o.n)}"></div>`;
+    const acao = o.status === "disponivel"
+      ? `<a class="link caps" href="${linkWhats(cap, o.n, o.titulo)}" target="_blank" rel="noopener">Quero esta tela</a>`
+      : o.status === "reservada" ? `<span class="sem-acao caps">Reservada</span>`
+      : o.status === "vendida" ? `<span class="sem-acao caps">Já tem dono</span>`
+      : `<span class="sem-acao caps">Sendo pintada</span>`;
+    return `<article class="obra ${o.status}">
+      <div class="tela">${imagem}</div>
+      <div class="rotulo caps"><span>${num}/30</span><span class="selo ${o.status}">${NOMES_STATUS[o.status]}</span></div>
+      <h4>${titulo}</h4>
+      <div class="acao">${acao}</div>
+    </article>`;
+  }).join("");
+}
+
+desenha();
+</script>
+</body>
+</html>

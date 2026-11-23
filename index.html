@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La Vie en Rosé</title>
+<meta name="description" content="Mariana de Bem: artista e tatuadora na Praia do Rosa. Coleção La Vie en Rosé, obras em acrílica sobre tela.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Ballet:opsz@16..72&family=Archivo:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="estilo.css">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <!-- Ícones no estilo recortado à mão: formas cheias e orgânicas, com detalhes vazados na cor do fundo.
+       O filtro "tremido" deixa as bordas levemente irregulares, como papel recortado ou tinta. -->
+  <filter id="tremido" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="7"/>
+    <feDisplacementMap in="SourceGraphic" scale="2.6" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <!-- Faísca: oito pontas de tamanhos diferentes -->
+  <symbol id="i-faisca" viewBox="0 0 100 100">
+    <path filter="url(#tremido)" fill="currentColor" stroke="currentColor" stroke-width="3" stroke-linejoin="round" d="M50.0 6.0 L53.6 41.6 L68.5 28.4 L60.4 46.0 L92.6 46.0 L59.7 54.5 L71.6 68.2 L57.0 63.0 L59.8 98.0 L48.1 62.8 L32.5 80.0 L40.2 58.9 L9.9 60.5 L40.2 50.2 L24.0 35.1 L44.3 41.5 Z"/>
+  </symbol>
+  <!-- Olho: amêndoa torta, cílios curtos em cima -->
+  <symbol id="i-olho" viewBox="0 0 100 100">
+    <g filter="url(#tremido)">
+      <path fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" d="M20 34 14 25M33 27l-3-10M47 24l-1-11M61 25l2-11M74 30l5-9M85 38l7-6"/>
+      <path fill="currentColor" d="M5 55C19 36 37 29 54 30s31 9 41 21C83 66 66 74 49 74S16 67 5 55Z"/>
+      <path style="fill:var(--creme)" d="M17 54c12-11 25-16 37-15s23 6 30 12c-9 9-21 14-34 14S26 62 17 54Z"/>
+      <path fill="currentColor" d="M51 41c7 0 12 5 11 12s-6 11-12 10-11-5-10-12 5-10 11-10Z"/>
+    </g>
+  </symbol>
+  <!-- Espiral: traço grosso que abre do centro -->
+  <symbol id="i-espiral" viewBox="0 0 100 100">
+    <path filter="url(#tremido)" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" d="M53.1 52.0 L53.4 52.4 L53.6 52.9 L53.7 53.5 L53.7 54.1 L53.6 54.7 L53.4 55.4 L53.1 56.0 L52.6 56.6 L52.0 57.1 L51.3 57.6 L50.5 58.0 L49.6 58.3 L48.6 58.5 L47.5 58.5 L46.5 58.4 L45.4 58.1 L44.3 57.7 L43.3 57.1 L42.3 56.4 L41.4 55.5 L40.7 54.5 L40.1 53.3 L39.7 52.1 L39.5 50.8 L39.5 49.4 L39.6 48.0 L40.1 46.6 L40.7 45.2 L41.6 43.9 L42.7 42.7 L44.0 41.6 L45.4 40.7 L47.1 39.9 L48.9 39.4 L50.7 39.1 L52.7 39.0 L54.7 39.2 L56.7 39.6 L58.6 40.3 L60.4 41.3 L62.2 42.5 L63.7 44.0 L65.0 45.6 L66.1 47.5 L66.9 49.5 L67.5 51.7 L67.7 53.9 L67.5 56.2 L67.0 58.4 L66.2 60.6 L65.0 62.8 L63.5 64.8 L61.7 66.6 L59.6 68.2 L57.3 69.5 L54.7 70.5 L52.0 71.2 L49.1 71.6 L46.2 71.6 L43.3 71.2 L40.4 70.4 L37.6 69.3 L34.9 67.8 L32.5 65.9 L30.4 63.8 L28.5 61.3 L27.1 58.6 L26.0 55.7 L25.4 52.7 L25.2 49.6 L25.5 46.4 L26.2 43.3 L27.4 40.3 L29.1 37.4 L31.2 34.7 L33.8 32.3 L36.7 30.2 L39.9 28.4 L43.4 27.1 L47.1 26.2 L50.9 25.8 L54.8 25.9 L58.7 26.4 L62.5 27.5 L66.1 29.1 L69.6 31.1 L72.7 33.5 L75.5 36.4 L77.8 39.6 L79.7 43.1 L81.0 46.8 L81.8 50.8 L82.0 54.8 L81.6 58.8 L80.6 62.8 L79.0 66.7 L76.8 70.4 L74.1 73.8 L70.8 76.8 L67.2 79.4 L63.1 81.6 L58.7 83.2 L54.1 84.3 L49.3 84.8 L44.4 84.7 L39.5 84.0 L34.8 82.6 L30.3 80.7 L26.0 78.2 L22.2 75.1 L18.8 71.6 L15.9 67.6 L13.6 63.3 L12.0 58.7 L11.1 53.9 L10.8 49.0 L11.3 44.0 L12.6 39.2 L14.5 34.4 L17.2 30.0"/>
+  </symbol>
+  <!-- Obras: tela no cavalete, recortada à mão -->
+  <symbol id="i-tela" viewBox="0 0 100 100">
+    <g filter="url(#tremido)">
+      <path fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" d="M50 6v10M34 70 25 95M66 70l10 24M50 71l1 20"/>
+      <path fill="currentColor" d="M20 16c16-3 42-1 60-2 2 16 1 38 2 56-20 2-44 1-63 2-1-18 0-38 1-56Z"/>
+    </g>
+  </symbol>
+  <!-- Trio: três telas penduradas -->
+  <symbol id="i-trio" viewBox="0 0 100 100">
+    <g filter="url(#tremido)">
+      <path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" d="M50 10C40 17 28 25 19 33M50 10c10 7 22 15 31 22M50 10v17"/>
+      <circle cx="50" cy="9" r="4" fill="currentColor"/>
+      <path fill="currentColor" d="M6 34c8-2 18-1 26-1 1 8 0 17 1 25-9 1-19 0-27 1-1-9 0-17 0-25Z"/>
+      <path fill="currentColor" d="M37 28c9-1 18 0 27-1 1 9 0 19 1 28-10 1-19 0-28 1-1-10 0-19 0-28Z"/>
+      <path fill="currentColor" d="M68 33c8-1 18 0 26-1 1 9 0 18 1 26-9 1-19 0-27 1-1-9 0-18 0-26Z"/>
+      <circle cx="31" cy="76" r="3" fill="currentColor"/><circle cx="50" cy="79" r="3" fill="currentColor"/><circle cx="69" cy="76" r="3" fill="currentColor"/>
+    </g>
+  </symbol>
+  <!-- Tatuagem: mão orgânica com ornamentos vazados nos dedos, como as tatuagens da Mariana -->
+  <symbol id="i-agulha" viewBox="0 0 100 100">
+    <g filter="url(#tremido)">
+      <path fill="currentColor" d="M40 96C40 88 38 82 34 76 30 70 22 62 16 54 13 50 16 45 21 48 26 52 30 57 33 60 32 50 31 38 31 28 31 22 38 22 38 28 38 36 39 44 40 50 40 38 41 24 42 16 42 10 50 10 50 16 50 26 50 38 50 48 51 38 53 26 54 20 55 14 62 15 61 21 60 30 59 40 58 50 60 42 63 34 65 30 67 25 73 27 72 32 70 42 68 54 67 64 66 74 62 82 60 88 60 91 60 94 60 96Z"/>
+      <g fill="none" style="stroke:var(--creme)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M34.8 31v20M32.6 34l2.2 2.2 2.2-2.2M32.6 40l2.2 2.2 2.2-2.2M32.6 46l2.2 2.2 2.2-2.2"/>
+        <path d="M46 20v25M43.8 23l2.2 2.2 2.2-2.2M43.8 29l2.2 2.2 2.2-2.2M43.8 35l2.2 2.2 2.2-2.2M43.8 41l2.2 2.2 2.2-2.2"/>
+        <path d="M57.6 24 57.2 46M55.4 27l2.2 2.2 2.2-2.2M55.3 33l2.2 2.2 2.2-2.2M55.2 39l2.2 2.2 2.2-2.2"/>
+        <path d="M68.5 35 66.6 52M66.5 38l2 2 2.1-1.9M65.9 44l2 2 2.1-1.9"/>
+      </g>
+      <!-- flor no dorso da mão -->
+      <g style="fill:var(--creme)">
+        <path d="M49.5 61c2.5 3.5 2.5 6 0 8.5-2.5-2.5-2.5-5 0-8.5Z"/>
+        <path d="M49.5 80c2.5-3.5 2.5-6 0-8.5-2.5 2.5-2.5 5 0 8.5Z"/>
+        <path d="M40 70.5c3.5-2.5 6-2.5 8.5 0-2.5 2.5-5 2.5-8.5 0Z"/>
+        <path d="M59 70.5c-3.5-2.5-6-2.5-8.5 0 2.5 2.5 5 2.5 8.5 0Z"/>
+      </g>
+    </g>
+  </symbol>
+</svg>
+
+<header class="topo" id="topo">
+  <div class="wrap">
+    <a class="marca" href="index.html">Mariana <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 0l1.6 7.2L19 5.5l-6 4.5 6 4.5-7.4-1.7L10 20l-1.6-7.2L1 14.5 7 10 1 5.5l7.4 1.7z"/></svg> de Bem</a>
+    <nav class="menu caps" aria-label="Páginas">
+      <a href="obras.html">Obras</a>
+      <a href="tatuagem.html">Tatuagem</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<header class="abertura">
+  <img src="foto-capa.jpg" alt="Mariana de Bem cobrindo um dos olhos com a mão tatuada, segurando um pincel">
+  <h1 class="letreiro"><span class="linha1">La vie</span><span class="linha2"><span class="en">en</span>Rosé</span></h1>
+  <div class="rodape caps"><span>Coleção · Praia do Rosa, SC</span><span class="rolar">Role ↓</span></div>
+</header>
+
+<section class="manifesto">
+  <div class="wrap">
+    <div class="icones" aria-hidden="true">
+      <svg><use href="#i-faisca"/></svg><svg><use href="#i-olho"/></svg><svg><use href="#i-espiral"/></svg>
+    </div>
+    <h2>Há 15 anos escolhi a Praia do Rosa. Agora pinto o que ela guarda.</h2>
+    <p>Trinta pequenas telas em acrílica, uma por dia, de 24 de novembro a 23 de dezembro. Cada uma é um elemento do Rosa: o que eu vejo, o que eu lembro e, às vezes, o que quem me acompanha me conta.</p>
+  </div>
+</section>
+
+<section class="caminhos" aria-label="Caminhos">
+  <div class="wrap grid">
+    <div class="caminho">
+      <svg aria-hidden="true"><use href="#i-tela"/></svg>
+      <h3>30 telas únicas</h3>
+      <p>10 × 10 cm, acrílica sobre tela.</p>
+      <a class="link caps" href="obras.html">Ver as obras</a>
+    </div>
+    <div class="caminho">
+      <svg aria-hidden="true"><use href="#i-trio"/></svg>
+      <h3>Monte seu trio</h3>
+      <p>três telas à sua escolha por R$ 700.</p>
+      <a class="link caps" data-whats="trio" href="#">Montar um trio</a>
+    </div>
+    <div class="caminho">
+      <svg aria-hidden="true"><use href="#i-agulha"/></svg>
+      <h3>Agende sua tatuagem</h3>
+      <p>agenda reduzida, projetos sob medida.</p>
+      <a class="link caps" href="tatuagem.html">Quero agendar</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="frase">A arte é a minha forma de enxergar o mundo.</p>
+    <div class="links">
+      <a data-whats="ola" href="#">WhatsApp <span data-numero></span></a>
+      <button class="copiar" data-copiar type="button">copiar número</button>
+      <a href="https://www.instagram.com/marianadebems/" target="_blank" rel="noopener">Instagram @marianadebems</a>
+      <a href="https://www.tiktok.com/@marianadbem" target="_blank" rel="noopener">TikTok @marianadbem</a>
+    </div>
+    <div class="base caps"><span>Mariana de Bem · Praia do Rosa, Brasil</span><span>© 2026</span></div>
+  </div>
+</footer>
+
+<script src="comum.js"></script>
+
+</html>
