@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Recados · Mariana de Bem</title>
+<meta name="description" content="Mural de recados de quem passa pelo site de Mariana de Bem.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Ballet:opsz@16..72&family=Archivo:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="tremido" x="-10%" y="-10%" width="120%" height="120%">
+    <!-- bordas tortas, como recorte ou carimbo -->
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="ondula"/>
+    <feDisplacementMap in="SourceGraphic" in2="ondula" scale="4.2" xChannelSelector="R" yChannelSelector="G" result="torto"/>
+    <!-- granulado de tinta de carimbo: pequenas falhas espalhadas -->
+    <feTurbulence type="fractalNoise" baseFrequency="1.7" numOctaves="1" seed="4" result="grao"/>
+    <feColorMatrix in="grao" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3 0 0 0 2.75" result="mascara"/>
+    <feComposite in="torto" in2="mascara" operator="in"/>
+  </filter>
+  <symbol id="i-faisca" viewBox="0 0 100 100">
+    <path filter="url(#tremido)" fill="currentColor" stroke="currentColor" stroke-width="3" stroke-linejoin="round" d="M50.0 6.0 L53.6 41.6 L68.5 28.4 L60.4 46.0 L92.6 46.0 L59.7 54.5 L71.6 68.2 L57.0 63.0 L59.8 98.0 L48.1 62.8 L32.5 80.0 L40.2 58.9 L9.9 60.5 L40.2 50.2 L24.0 35.1 L44.3 41.5 Z"/>
+  </symbol>
+  <symbol id="i-olho" viewBox="0 0 100 100">
+    <g filter="url(#tremido)">
+      <path fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" d="M20 34 14 25M33 27l-3-10M47 24l-1-11M61 25l2-11M74 30l5-9M85 38l7-6"/>
+      <path fill="currentColor" d="M5 55C19 36 37 29 54 30s31 9 41 21C83 66 66 74 49 74S16 67 5 55Z"/>
+      <path style="fill:var(--creme)" d="M17 54c12-11 25-16 37-15s23 6 30 12c-9 9-21 14-34 14S26 62 17 54Z"/>
+      <path fill="currentColor" d="M51 41c7 0 12 5 11 12s-6 11-12 10-11-5-10-12 5-10 11-10Z"/>
+    </g>
+  </symbol>
+  <symbol id="i-espiral" viewBox="0 0 100 100">
+    <path filter="url(#tremido)" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" d="M53.1 52.0 L53.4 52.4 L53.6 52.9 L53.7 53.5 L53.7 54.1 L53.6 54.7 L53.4 55.4 L53.1 56.0 L52.6 56.6 L52.0 57.1 L51.3 57.6 L50.5 58.0 L49.6 58.3 L48.6 58.5 L47.5 58.5 L46.5 58.4 L45.4 58.1 L44.3 57.7 L43.3 57.1 L42.3 56.4 L41.4 55.5 L40.7 54.5 L40.1 53.3 L39.7 52.1 L39.5 50.8 L39.5 49.4 L39.6 48.0 L40.1 46.6 L40.7 45.2 L41.6 43.9 L42.7 42.7 L44.0 41.6 L45.4 40.7 L47.1 39.9 L48.9 39.4 L50.7 39.1 L52.7 39.0 L54.7 39.2 L56.7 39.6 L58.6 40.3 L60.4 41.3 L62.2 42.5 L63.7 44.0 L65.0 45.6 L66.1 47.5 L66.9 49.5 L67.5 51.7 L67.7 53.9 L67.5 56.2 L67.0 58.4 L66.2 60.6 L65.0 62.8 L63.5 64.8 L61.7 66.6 L59.6 68.2 L57.3 69.5 L54.7 70.5 L52.0 71.2 L49.1 71.6 L46.2 71.6 L43.3 71.2 L40.4 70.4 L37.6 69.3 L34.9 67.8 L32.5 65.9 L30.4 63.8 L28.5 61.3 L27.1 58.6 L26.0 55.7 L25.4 52.7 L25.2 49.6 L25.5 46.4 L26.2 43.3 L27.4 40.3 L29.1 37.4 L31.2 34.7 L33.8 32.3 L36.7 30.2 L39.9 28.4 L43.4 27.1 L47.1 26.2 L50.9 25.8 L54.8 25.9 L58.7 26.4 L62.5 27.5 L66.1 29.1 L69.6 31.1 L72.7 33.5 L75.5 36.4 L77.8 39.6 L79.7 43.1 L81.0 46.8 L81.8 50.8 L82.0 54.8 L81.6 58.8 L80.6 62.8 L79.0 66.7 L76.8 70.4 L74.1 73.8 L70.8 76.8 L67.2 79.4 L63.1 81.6 L58.7 83.2 L54.1 84.3 L49.3 84.8 L44.4 84.7 L39.5 84.0 L34.8 82.6 L30.3 80.7 L26.0 78.2 L22.2 75.1 L18.8 71.6 L15.9 67.6 L13.6 63.3 L12.0 58.7 L11.1 53.9 L10.8 49.0 L11.3 44.0 L12.6 39.2 L14.5 34.4 L17.2 30.0"/>
+  </symbol>
+  <symbol id="i-tela" viewBox="0 0 100 100">
+    <g filter="url(#tremido)">
+      <path fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" d="M50 6v10M34 70 25 95M66 70l10 24M50 71l1 20"/>
+      <path fill="currentColor" d="M20 16c16-3 42-1 60-2 2 16 1 38 2 56-20 2-44 1-63 2-1-18 0-38 1-56Z"/>
+    </g>
+  </symbol>
+  <symbol id="i-trio" viewBox="0 0 100 100">
+    <g filter="url(#tremido)">
+      <path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" d="M50 10C40 17 28 25 19 33M50 10c10 7 22 15 31 22M50 10v17"/>
+      <circle cx="50" cy="9" r="4" fill="currentColor"/>
+      <path fill="currentColor" d="M6 34c8-2 18-1 26-1 1 8 0 17 1 25-9 1-19 0-27 1-1-9 0-17 0-25Z"/>
+      <path fill="currentColor" d="M37 28c9-1 18 0 27-1 1 9 0 19 1 28-10 1-19 0-28 1-1-10 0-19 0-28Z"/>
+      <path fill="currentColor" d="M68 33c8-1 18 0 26-1 1 9 0 18 1 26-9 1-19 0-27 1-1-9 0-18 0-26Z"/>
+      <circle cx="31" cy="76" r="3" fill="currentColor"/><circle cx="50" cy="79" r="3" fill="currentColor"/><circle cx="69" cy="76" r="3" fill="currentColor"/>
+    </g>
+  </symbol>
+  <symbol id="i-agulha" viewBox="0 0 100 100">
+    <g filter="url(#tremido)">
+      <path fill="currentColor" d="M40 96C40 88 38 82 34 76 30 70 22 62 16 54 13 50 16 45 21 48 26 52 30 57 33 60 32 50 31 38 31 28 31 22 38 22 38 28 38 36 39 44 40 50 40 38 41 24 42 16 42 10 50 10 50 16 50 26 50 38 50 48 51 38 53 26 54 20 55 14 62 15 61 21 60 30 59 40 58 50 60 42 63 34 65 30 67 25 73 27 72 32 70 42 68 54 67 64 66 74 62 82 60 88 60 91 60 94 60 96Z"/>
+      <g fill="none" style="stroke:var(--creme)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M34.8 31v20M32.6 34l2.2 2.2 2.2-2.2M32.6 40l2.2 2.2 2.2-2.2M32.6 46l2.2 2.2 2.2-2.2"/>
+        <path d="M46 20v25M43.8 23l2.2 2.2 2.2-2.2M43.8 29l2.2 2.2 2.2-2.2M43.8 35l2.2 2.2 2.2-2.2M43.8 41l2.2 2.2 2.2-2.2"/>
+        <path d="M57.6 24 57.2 46M55.4 27l2.2 2.2 2.2-2.2M55.3 33l2.2 2.2 2.2-2.2M55.2 39l2.2 2.2 2.2-2.2"/>
+        <path d="M68.5 35 66.6 52M66.5 38l2 2 2.1-1.9M65.9 44l2 2 2.1-1.9"/>
+      </g>
+      <g style="fill:var(--creme)">
+        <path d="M49.5 61c2.5 3.5 2.5 6 0 8.5-2.5-2.5-2.5-5 0-8.5Z"/>
+        <path d="M49.5 80c2.5-3.5 2.5-6 0-8.5-2.5 2.5-2.5 5 0 8.5Z"/>
+        <path d="M40 70.5c3.5-2.5 6-2.5 8.5 0-2.5 2.5-5 2.5-8.5 0Z"/>
+        <path d="M59 70.5c-3.5-2.5-6-2.5-8.5 0 2.5 2.5 5 2.5 8.5 0Z"/>
+      </g>
+    </g>
+  </symbol>
+  <!-- adesivos novos do mural, no mesmo estilo recortado à mão -->
+  <!-- Coração com três folhas (enviado pela Mariana) -->
+  <symbol id="i-coracao-folhas" viewBox="0 0 100 100">
+    <g filter="url(#tremido)" fill="currentColor">
+      <path d="M45.2 43.5C39 40 34 34 32 27 30.5 21 30.8 16 31.5 12.9 37 16 42 22 44.5 29 46.5 34 46.5 39 45.2 43.5Z"/>
+      <path d="M48.2 43.8C43 34 43.5 22 47 15 49 11 52 8 53.5 7.3 56 14 57.5 25 55 34 53.5 39 51 42 48.2 43.8Z"/>
+      <path d="M53 45.2C54 39 56.5 32 61 26 65 20.5 70 16.5 74.2 14.7 74.5 21 72 29 67 35 63 40 58 43.5 53 45.2Z"/>
+      <path d="M50.5 58C46 50 38 44 30 44.5 22 45 18 51 19.5 57 21 68 36 80 50.5 92.7 62 82 79 69 80.5 56 81.5 49 77 44 71 44.4 62 45 55 51 50.5 58Z"/>
+    </g>
+  </symbol>
+  <!-- Flor de sete pétalas com olho no meio (enviada pela Mariana) -->
+  <symbol id="i-flor-olho" viewBox="0 0 100 100">
+    <g filter="url(#tremido)">
+      <g fill="currentColor">
+        <ellipse cx="51" cy="26" rx="12.5" ry="24" transform="rotate(9 50 50)"/>
+        <ellipse cx="50" cy="29" rx="10" ry="21" transform="rotate(54 50 50)"/>
+        <ellipse cx="49" cy="27" rx="11.5" ry="23" transform="rotate(108 50 50)"/>
+        <ellipse cx="51" cy="25" rx="13" ry="25" transform="rotate(161 50 50)"/>
+        <ellipse cx="50" cy="29" rx="9.5" ry="21" transform="rotate(214 50 50)"/>
+        <ellipse cx="49" cy="27" rx="12" ry="23" transform="rotate(266 50 50)"/>
+        <ellipse cx="51" cy="30" rx="10.5" ry="20" transform="rotate(322 50 50)"/>
+        <path d="M50 33C61 33 68 41 67 51S59 68 49 67 32 60 33 50 40 33 50 33Z"/>
+      </g>
+      <path style="fill:var(--creme)" d="M32 51C38 43 45 41 51 41 57 41 64 45 68 51 62 56 56 58 50 58 43 58 37 55 32 51Z"/>
+      <path fill="currentColor" d="M50 44c4 0 6 3 6 6s-3 6-6 5-6-2-6-6 3-5 6-5Z"/>
+    </g>
+  </symbol>
+  <!-- Ondas: três traços grossos -->
+  <symbol id="i-onda" viewBox="0 0 100 100">
+    <g filter="url(#tremido)" fill="none" stroke="currentColor" stroke-width="7.5" stroke-linecap="round">
+      <path d="M8 35c9-10 18-12 28-1s19 9 28-1 20-10 28 2"/>
+      <path d="M10 54c10-11 19-10 27 1s18 11 29-1 18-9 26 1"/>
+      <path d="M7 73c10-9 18-11 29 0s18 9 27-1 19-11 29 0"/>
+    </g>
+  </symbol>
+  <!-- Estrela: cinco pontas tortas com miolo vazado -->
+  <symbol id="i-estrela" viewBox="0 0 100 100">
+    <g filter="url(#tremido)">
+      <path fill="currentColor" d="M52 5 60 36 94 31 67 54 79 92 49 70 17 89 31 57 6 40 39 35Z"/>
+      <path style="fill:var(--creme)" d="M48 46c5-1 8 2 8 6s-3 7-8 6-6-3-6-7 2-5 6-5Z"/>
+    </g>
+  </symbol>
+  <!-- Pássaro: de lado, asa em leque e cauda aberta -->
+  <symbol id="i-passaro" viewBox="0 0 100 100">
+    <g filter="url(#tremido)" transform="translate(50 50) scale(1.1) translate(-50 -40)">
+      <g fill="currentColor">
+        <path d="M4 53 14 49C22 45 34 44 48 47 60 50 70 54 78 52 72 60 60 64 46 64 32 64 18 60 4 53Z"/>
+        <path d="M36 48C44 31 59 21 81 17 71 25 63 35 58 50Z"/>
+        <path d="M44 50C54 39 67 33 83 31 74 39 66 46 58 52Z"/>
+        <path d="M75 52 94 41 88 54 96 63 75 58Z"/>
+      </g>
+      <circle cx="17" cy="51" r="2.6" style="fill:var(--creme)"/>
+    </g>
+  </symbol>
+  <!-- Lua com estrela -->
+  <symbol id="i-lua-estrela" viewBox="0 0 100 100">
+    <g filter="url(#tremido)" fill="currentColor">
+      <path d="M58 13C34 15 17 35 19 58 21 80 41 93 64 90 45 82 35 66 35 50 35 34 44 20 58 13Z"/>
+      <path d="M70 21 75.5 33 88 32 78 41.5 83 54 71 46.5 60 53 65 41 55 35 67.5 33.5Z"/>
+    </g>
+  </symbol>
+  <!-- Yin-yang: círculo contornado, metade cheia e dois pontos -->
+  <symbol id="i-yinyang" viewBox="0 0 100 100">
+    <g filter="url(#tremido)">
+      <path fill="none" stroke="currentColor" stroke-width="5" d="M50 9C73 7 92 27 90 51 88 74 70 92 47 91 25 90 9 71 10 48 12 26 28 11 50 9Z"/>
+      <path fill="currentColor" d="M50 9C73 7 92 27 90 51 88 74 70 92 47 91 35 90 28 81 30 70 32 58 42 53 51 51 61 49 69 42 67 30 66 19 59 10 50 9Z"/>
+      <path fill="currentColor" d="M48 25c5-1 8 2 8 6s-3 7-7 7-7-3-7-7 3-6 6-6Z"/>
+      <path style="fill:var(--creme)" d="M50 64c4 0 7 3 7 7s-4 6-8 6-6-3-6-7 3-6 7-6Z"/>
+    </g>
+  </symbol>
+  <!-- Arco-íris: três arcos grossos -->
+  <symbol id="i-arcoiris" viewBox="0 0 100 100">
+    <g filter="url(#tremido)" fill="none" stroke="currentColor" stroke-width="9.5">
+      <path d="M10 76C9 48 28 26 52 27 75 28 91 47 89 77"/>
+      <path d="M26 76C25 57 36 42 51 43 65 43 75 56 74 77"/>
+      <path d="M41 76C40 65 45 58 51 58 57 58 61 65 60 77"/>
+    </g>
+  </symbol>
+  <!-- Tulipa: flor de três pontas, folhas e dois raminhos com bolinhas -->
+  <symbol id="i-tulipa" viewBox="0 0 100 100">
+    <g filter="url(#tremido)">
+      <path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" d="M50 46C49 60 51 74 50 88M50 72C44 65 39 57 34 50M51 67C56 60 61 54 66 46"/>
+      <g fill="currentColor">
+        <path d="M36 18 44 29 51 12 57 28 65 15C69 31 64 44 51 47 38 46 32 33 36 18Z"/>
+        <path d="M50 88C41 83 27 80 16 70 32 66 45 75 50 88Z"/>
+        <path d="M50 88C61 85 70 77 84 73 69 66 57 74 50 88Z"/>
+        <path d="M34 42c3 0 5 2 5 5s-2 4-5 4-4-2-4-5 2-4 4-4Z"/>
+        <path d="M66 39c3-1 5 2 5 4s-2 5-5 5-4-3-4-5 2-4 4-4Z"/>
+      </g>
+      <path fill="none" style="stroke:var(--creme)" stroke-width="2.4" stroke-linecap="round" d="M50 29C51 34 50 38 51 42"/>
+    </g>
+  </symbol>
+</svg>
+
+<header class="topo solido" id="topo">
+  <div class="wrap">
+    <a class="marca" href="index.html">Mariana <svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 0l1.6 7.2L19 5.5l-6 4.5 6 4.5-7.4-1.7L10 20l-1.6-7.2L1 14.5 7 10 1 5.5l7.4 1.7z"/></svg> de Bem</a>
+    <nav class="menu caps" aria-label="Páginas">
+      <a href="obras.html">Obras</a>
+      <a href="tatuagem.html">Tatuagem</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <a href="recados.html" aria-current="page">Recados</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="cab-pagina">
+    <div class="wrap">
+      <span class="caps">Mural</span>
+      <h1>Deixe um <span class="script">recado</span></h1>
+      <p>Um cantinho para quem passa por aqui: um carinho, uma lembrança do Rosa, a tela que te pegou. Escolha seus adesivos e prenda no mural.</p>
+    </div>
+  </section>
+
+  <section class="mural-sec">
+    <div class="wrap">
+      <div class="mural" id="mural">
+        <button class="bilhete deixar" type="button" id="abrir-form" style="--r:-1.5deg">
+          <span class="pino"></span>
+          <span class="mais" aria-hidden="true">+</span>
+          <span class="caps">deixar um recado</span>
+        </button>
+        <div class="bilhete aviso p-branco" style="--r:1deg">
+          <span class="fita"></span>
+          <p>Oi! Este mural é de quem passa por aqui. Cada recado chega primeiro pra mim e eu prendo aqui depois de ler. Recados ofensivos não entram.</p>
+          <span class="de">com carinho, Mariana</span>
+          <span class="adesivos"><svg aria-hidden="true"><use href="#i-coracao-folhas"/></svg></span>
+        </div>
+      </div>
+      <p class="mural-vazio" id="vazio" hidden>Ainda não tem recados aqui. Seja a primeira pessoa a deixar um ✦</p>
+    </div>
+  </section>
+</main>
+
+<dialog id="dialogo" aria-labelledby="titulo-form">
+  <form class="form-recado" id="form">
+    <h2 id="titulo-form">Deixar um <span class="script">recado</span></h2>
+    <div>
+      <label class="caps" for="texto">Seu recado</label>
+      <textarea id="texto" maxlength="300" placeholder="escreve aqui seu recado…" required></textarea>
+      <span class="conta" id="conta">0/300</span>
+    </div>
+    <div>
+      <span class="caps">Pra quem é?</span>
+      <div class="escolha" data-grupo="pra"><button type="button" data-v="todos" aria-pressed="true">pro mural</button><button type="button" data-v="mariana" aria-pressed="false">só pra Mariana</button></div>
+    </div>
+    <div>
+      <span class="caps">Quer assinar?</span>
+      <div class="escolha" data-grupo="assina"><button type="button" data-v="nao" aria-pressed="true">sem assinatura</button><button type="button" data-v="sim" aria-pressed="false">assinar</button></div>
+      <input type="text" id="nome" maxlength="40" placeholder="seu nome ou @" hidden>
+    </div>
+    <div>
+      <span class="caps">Adesivos (até 3)</span>
+      <div class="adesivos-op" id="adesivos-op"></div>
+    </div>
+    <p class="nota-form">Seu recado vai pra Mariana pelo WhatsApp e entra no mural depois que ela ler. Quer colar uma foto? Mande na mesma conversa.</p>
+    <div class="acoes">
+      <button class="cancelar" type="button" id="cancelar">cancelar</button>
+      <button class="botao-cheio caps" type="submit">enviar recado ✦</button>
+    </div>
+  </form>
+</dialog>
+
+<footer>
+  <div class="wrap">
+    <p class="frase">A arte é a minha forma de enxergar o mundo.</p>
+    <div class="links">
+      <a data-whats="ola" href="https://wa.me/5548998565616" target="_blank" rel="noopener">WhatsApp <span data-numero></span></a>
+      <button class="copiar" data-copiar type="button">copiar número</button>
+      <a href="mailto:contato@marianadebem.com.br">contato@marianadebem.com.br</a>
+      <a href="https://www.instagram.com/marianadebems/" target="_blank" rel="noopener">Instagram @marianadebems</a>
+      <a href="https://www.tiktok.com/@marianadbem" target="_blank" rel="noopener">TikTok @marianadbem</a>
+    </div>
+    <div class="base caps"><span>Mariana de Bem · Praia do Rosa, Brasil</span><span>© 2026</span></div>
+  </div>
+</footer>
+
+<script src="comum.js"></script>
+<script>
+/* Adesivos disponíveis (todos pretos). Os nomes são os ids dos desenhos no topo da página. */
+const ADESIVOS = ["i-faisca", "i-olho", "i-espiral", "i-tela", "i-trio", "i-agulha", "i-flor-olho", "i-coracao-folhas", "i-onda", "i-estrela", "i-passaro", "i-lua-estrela", "i-yinyang", "i-arcoiris", "i-tulipa"];
+const NOMES = { "i-faisca": "faísca", "i-olho": "olho", "i-espiral": "espiral", "i-tela": "tela", "i-trio": "trio", "i-agulha": "mão", "i-flor-olho": "flor com olho", "i-coracao-folhas": "coração", "i-onda": "ondas", "i-estrela": "estrela", "i-passaro": "pássaro", "i-lua-estrela": "lua com estrela", "i-yinyang": "yin-yang", "i-arcoiris": "arco-íris", "i-tulipa": "tulipa" };
+const PAPEIS = ["p-creme", "p-areia", "p-rose", "p-branco", "p-pauta", "p-argila", "p-escuro"];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const svg = id => ADESIVOS.includes(id) ? `<svg aria-hidden="true"><use href="#${id}"/></svg>` : "";
+
+function bilhete(r, k, extra) {
+  const d = document.createElement("div");
+  d.className = "bilhete " + (PAPEIS.includes("p-" + r.papel) ? "p-" + r.papel : PAPEIS[k % PAPEIS.length]) + (extra || "");
+  d.style.setProperty("--r", ((k * 47) % 9 - 4) * .6 + "deg");
+  d.innerHTML = (k % 3 === 0 ? `<span class="fita"></span>` : `<span class="pino"></span>`)
+    + `<p>${esc(r.texto)}</p>`
+    + `<span class="de">${r.de ? "de: " + esc(r.de) : "sem assinatura"}</span>`
+    + (r.adesivos && r.adesivos.length ? `<span class="adesivos">${r.adesivos.slice(0, 3).map(svg).join("")}</span>` : "")
+    + (r.aguardando ? `<span class="espera caps">aguardando a Mariana</span>` : "");
+  return d;
+}
+
+/* Recados aprovados: ficam no arquivo recados.json, um por linha, do mais novo para o mais antigo. */
+const mural = document.getElementById("mural");
+let enviados = [];
+try { enviados = JSON.parse(localStorage.getItem("recados-enviados") || "[]"); } catch (e) { enviados = []; }
+function desenha(aprovados) {
+  mural.querySelectorAll(".bilhete.r").forEach(n => n.remove());
+  let k = 2;
+  enviados.slice().reverse().forEach(r => mural.appendChild(bilhete({ ...r, aguardando: true }, k++, " r")));
+  aprovados.forEach(r => mural.appendChild(bilhete(r, k++, " r")));
+  document.getElementById("vazio").hidden = aprovados.length + enviados.length > 0;
+}
+let aprovados = [];
+fetch("recados.json", { cache: "no-store" }).then(r => r.ok ? r.json() : []).catch(() => []).then(lista => { aprovados = Array.isArray(lista) ? lista : []; desenha(aprovados); });
+
+/* Formulário */
+const dlg = document.getElementById("dialogo"), form = document.getElementById("form");
+const texto = document.getElementById("texto"), conta = document.getElementById("conta"), nome = document.getElementById("nome");
+const op = document.getElementById("adesivos-op");
+let escolhidos = [];
+ADESIVOS.forEach(id => {
+  const b = document.createElement("button");
+  b.type = "button"; b.setAttribute("aria-pressed", "false"); b.setAttribute("aria-label", "adesivo " + NOMES[id]);
+  b.innerHTML = svg(id);
+  b.addEventListener("click", () => {
+    const j = escolhidos.indexOf(id);
+    if (j >= 0) escolhidos.splice(j, 1); else if (escolhidos.length < 3) escolhidos.push(id);
+    [...op.children].forEach((x, n) => x.setAttribute("aria-pressed", String(escolhidos.includes(ADESIVOS[n]))));
+  });
+  op.appendChild(b);
+});
+form.querySelectorAll(".escolha").forEach(g => g.addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  g.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  if (g.dataset.grupo === "assina") nome.hidden = b.dataset.v !== "sim";
+}));
+const valor = g => form.querySelector(`[data-grupo="${g}"] [aria-pressed="true"]`).dataset.v;
+texto.addEventListener("input", () => conta.textContent = texto.value.length + "/300");
+
+document.getElementById("abrir-form").addEventListener("click", () => {
+  form.reset(); escolhidos = []; nome.hidden = true; conta.textContent = "0/300";
+  [...op.children].forEach(x => x.setAttribute("aria-pressed", "false"));
+  form.querySelectorAll(".escolha").forEach(g => g.querySelectorAll("button").forEach((x, n) => x.setAttribute("aria-pressed", String(n === 0))));
+  dlg.showModal(); texto.focus();
+});
+document.getElementById("cancelar").addEventListener("click", () => dlg.close());
+
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const t = texto.value.trim(); if (!t) { texto.focus(); return; }
+  const pra = valor("pra"), assinatura = valor("assina") === "sim" ? nome.value.trim() : "";
+  const msg = (pra === "mariana" ? "Recado só pra você (não é pro mural):\n\n" : "Recado para o mural do site ✦\n\n")
+    + t + "\n\n"
+    + "Assinatura: " + (assinatura || "sem assinatura") + "\n"
+    + "Adesivos: " + (escolhidos.length ? escolhidos.map(id => NOMES[id]).join(", ") : "nenhum");
+  window.open(zap(msg), "_blank", "noopener");
+  if (pra === "todos") {
+    enviados.push({ texto: t, de: assinatura, adesivos: escolhidos.slice(), papel: ["creme", "areia", "rose", "branco"][Math.floor(Math.random() * 4)] });
+    try { localStorage.setItem("recados-enviados", JSON.stringify(enviados.slice(-10))); } catch (err) {}
+    desenha(aprovados);
+  }
+  dlg.close();
+});
+</script>
+</body>
+</html>

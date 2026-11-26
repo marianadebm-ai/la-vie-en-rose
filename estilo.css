@@ -173,6 +173,52 @@ ol.pedido b { display: inline-block; min-width: 9.5em; font-weight: 500; color: 
 .dados .valor { font-family: var(--display); font-size: 1.25rem; overflow-wrap: anywhere; }
 .copiar { font: inherit; font-size: .8rem; background: none; border: 1px solid currentColor; color: inherit; opacity: .75; padding: 3px 10px; border-radius: 999px; cursor: pointer; margin-left: 6px; }
 
+/* mural de recados (recados.html)
+   Os bilhetes são papel de verdade: cores fixas, iguais no modo claro e escuro.
+   Os adesivos são sempre pretos, com o miolo vazado em creme. */
+.mural-sec { padding: 0 0 110px; }
+.mural { columns: 4 220px; column-gap: 22px; background: var(--cartao); border-radius: 12px; padding: 34px 26px 14px; }
+.mural-vazio { text-align: center; color: var(--nevoa); margin: 22px 0 0; }
+.bilhete { --creme: #f4ede1; break-inside: avoid; display: inline-block; width: 100%; margin: 0 0 26px; position: relative; padding: 20px 18px 16px; color: #22170f; font-family: var(--display); font-size: 1rem; line-height: 1.4; transform: rotate(var(--r, 0deg)); box-shadow: 0 6px 14px rgba(20,13,7,.14); transition: transform .25s; }
+.bilhete:hover { transform: rotate(0deg) translateY(-2px); }
+.bilhete p { margin: 0; overflow-wrap: anywhere; }
+.bilhete .de { display: block; margin-top: 10px; font-family: var(--script); font-size: 1.25rem; text-align: right; opacity: .8; }
+.bilhete .pino { position: absolute; top: -7px; left: 50%; width: 14px; height: 14px; border-radius: 50%; transform: translateX(-50%); background: #9a5f43; box-shadow: 0 2px 3px rgba(0,0,0,.3), inset -2px -2px 0 rgba(0,0,0,.18); }
+.bilhete .fita { position: absolute; top: -10px; left: 32%; width: 74px; height: 20px; background: rgba(244,237,225,.82); transform: rotate(-4deg); box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+.bilhete .adesivos { position: absolute; right: -12px; bottom: -16px; display: flex; }
+.bilhete .adesivos svg, .adesivos-op svg { color: #141010; }
+.bilhete .adesivos svg { width: 44px; height: 44px; margin-left: -10px; filter: drop-shadow(1px 1px 0 #fff) drop-shadow(-1px -1px 0 #fff) drop-shadow(1px -1px 0 #fff) drop-shadow(-1px 1px 0 #fff) drop-shadow(0 2px 2px rgba(0,0,0,.25)); }
+.bilhete .espera { display: inline-block; margin-top: 8px; font-size: .58rem; opacity: .7; }
+.bilhete.deixar { background: #22170f; color: #f4ede1; border: 0; cursor: pointer; text-align: center; padding: 34px 16px; display: inline-grid; gap: 6px; justify-items: center; font: inherit; }
+.bilhete.deixar .mais { font-family: var(--display); font-size: 2.4rem; line-height: 1; }
+.bilhete.deixar:hover { background: #9a5f43; }
+.bilhete.aviso p { font-family: var(--texto); font-size: .9rem; line-height: 1.55; }
+.p-creme { background: #fbf6ee; } .p-areia { background: #ebe2d3; } .p-rose { background: #ead2c6; } .p-branco { background: #fff; }
+.p-pauta { background: #fff repeating-linear-gradient(transparent 0 23px, rgba(154,95,67,.2) 23px 24px); }
+.p-argila { background: #9a5f43; color: #f4ede1; } .p-escuro { background: #22170f; color: #f4ede1; }
+
+dialog#dialogo { border: 0; padding: 0; background: transparent; width: min(500px, calc(100vw - 32px)); max-height: calc(100vh - 32px); }
+dialog#dialogo::backdrop { background: rgba(20,13,7,.55); }
+.form-recado { background: var(--creme); color: var(--tinta); border-radius: 14px; padding: 30px 28px 24px; display: grid; gap: 18px; max-height: calc(100vh - 32px); overflow-y: auto; }
+.form-recado h2 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: 1.7rem; line-height: 1; margin: 0 0 4px; }
+.form-recado h2 .script { color: var(--argila); font-size: 1.6em; }
+.form-recado .caps { display: block; color: var(--nevoa); margin-bottom: 8px; }
+.form-recado textarea, .form-recado input[type="text"] { width: 100%; font: inherit; font-family: var(--display); font-size: 1rem; color: var(--tinta); background: transparent; border: 1px solid var(--linha); border-radius: 10px; padding: 12px 14px; }
+.form-recado textarea { min-height: 110px; resize: vertical; }
+.form-recado input[type="text"] { margin-top: 10px; }
+.form-recado .conta { display: block; text-align: right; font-size: .75rem; color: var(--nevoa); }
+.escolha { display: flex; gap: 8px; flex-wrap: wrap; }
+.escolha button { font: inherit; font-size: .85rem; cursor: pointer; background: transparent; color: var(--tinta); border: 1px solid var(--tinta); border-radius: 999px; padding: 5px 14px; }
+.escolha button[aria-pressed="true"] { background: var(--tinta); color: var(--creme); }
+.adesivos-op { --creme: #f4ede1; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; background: #fbf6ee; border-radius: 10px; padding: 10px; }
+.adesivos-op button { background: none; border: 2px solid transparent; border-radius: 10px; padding: 6px; aspect-ratio: 1; cursor: pointer; }
+.adesivos-op button[aria-pressed="true"] { border-color: #9a5f43; background: rgba(154,95,67,.1); }
+.adesivos-op svg { width: 100%; height: 100%; }
+.nota-form { font-size: .82rem; color: var(--nevoa); margin: 0; }
+.form-recado .acoes { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.form-recado .cancelar { font: inherit; background: none; border: 0; color: var(--nevoa); text-decoration: underline; cursor: pointer; }
+.form-recado .botao-cheio { border: 0; cursor: pointer; font-size: .72rem; }
+
 /* rodapé (escuro) */
 footer { background: var(--escuro); color: var(--escuro-texto); padding: 110px 0 calc(32px + env(safe-area-inset-bottom, 0px)); }
 footer .frase { font-family: var(--display); font-size: clamp(1.9rem, 4.6vw, 3.6rem); line-height: 1.12; margin: 0 0 56px; max-width: 20ch; text-wrap: balance; }
@@ -197,6 +243,8 @@ footer .base { display: flex; justify-content: space-between; gap: 16px; flex-wr
   .duas { grid-template-columns: 1fr; gap: 40px; }
   ol.pedido b { display: block; min-width: 0; }
   .etapas .grid, .canais, .dados, .numeros { grid-template-columns: 1fr; }
+  .mural { columns: 2 150px; column-gap: 14px; padding: 26px 14px 8px; }
+  .bilhete { font-size: .92rem; padding: 18px 14px 14px; }
   .sobre .barra { padding-bottom: 36px; }
 }
 @media (min-width: 761px) and (max-width: 980px) {
